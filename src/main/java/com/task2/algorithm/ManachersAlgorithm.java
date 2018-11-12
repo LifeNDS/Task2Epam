@@ -14,8 +14,8 @@ public class ManachersAlgorithm {
 		LOG.info("OK");
 		char[] s2 = addBoundaries(s.toCharArray());
 		int[] p = new int[s2.length];
-		int c = 0, r = 0; // Here the first element in s2 has been processed.
-		int m = 0, n = 0; // The walking indices to compare if two elements are the same
+		int c = 0, r = 0;
+		int m = 0, n = 0;
 		for (int i = 1; i < s2.length; i++) {
 			if (i > r) {
 				p[i] = 0;
@@ -25,7 +25,7 @@ public class ManachersAlgorithm {
 				int i2 = c * 2 - i;
 				if (p[i2] < (r - i)) {
 					p[i] = p[i2];
-					m = -1; // This signals bypassing the while loop below.
+					m = -1;
 				} else {
 					p[i] = r - i;
 					n = r + 1;

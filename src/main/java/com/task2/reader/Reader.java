@@ -11,7 +11,7 @@ public class Reader {
 	private String fileName;
 	private Scanner scanner;
 
-	public Reader(String fileName) throws NullPointerException {
+	public Reader(String fileName) throws FileNotFoundException {
 
 		if (fileName == null) {
 			LOG.error("Argument fileName can not be null");
@@ -29,7 +29,7 @@ public class Reader {
 			scanner = new Scanner(fr);
 			LOG.info(scanner);
 		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+			throw new FileNotFoundException();
 
 		}
 
